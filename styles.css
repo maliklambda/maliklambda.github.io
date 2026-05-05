@@ -1,0 +1,445 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #f4f4f4;
+    background-color: #121212;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(18, 18, 18, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #121212 0%, #1f4037 100%);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #00adb5;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #1a1a1a;
+    padding: 100px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1.5fr; 
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.about-image img:hover {
+    filter: grayscale(0%);
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* Re-adjusting Contact Icons for left-alignment in About Section */
+.contact-links {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Tablet/Mobile Adjustment */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Stacks image on top of text */
+        text-align: center;
+    }
+    
+    .about-text .contact-links {
+        justify-content: center;
+    }
+}
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: linear-gradient(to right, #1f4037, #22332b); /* Subtle Green Gradient */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Project Grid */
+/* Projects Section Adjustment */
+.projects {
+    padding: 0; /* Removing padding to allow projects to touch edges if desired */
+}
+
+/* Projects Headline Styles */
+.projects-header {
+    height: 40vh; /* Shorter than a full project card to signal it's a transition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #121212;
+    /* scroll-snap-align: start; /* Snaps into place just like the projects */
+}
+
+.projects-header h2 {
+    font-size: 3.5rem;
+    color: #00adb5;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.projects-header p {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Scroll Snap Container: 
+   This makes the section act like a vertical slider 
+*/
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    gap: 0; /* No gaps so they flow into each other, or add 50px for breathing room */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Each project takes up the full screen height */
+    width: 100%;
+    background: #121212;
+    border-radius: 0; /* Removed radius for full-width look */
+    border-bottom: 1px solid #333;
+    padding: 4rem 2rem;
+    scroll-snap-align: start; /* The 'locking' mechanism */
+    scroll-snap-stop: always; /* Forces the scroll to stop at every card */
+}
+
+.project-card img {
+    width: 100%;
+    max-width: 900px;
+    
+    /* NEW: Constrain height to roughly 70% of the screen height */
+    /* This leaves room for your text/padding above and below */
+    max-height: 30vh; 
+    
+    /* Ensures the image maintains aspect ratio without stretching */
+    object-fit: contain; 
+    
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+}
+
+.project-info {
+    text-align: center;
+    max-width: 700px;
+}
+
+.project-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00adb5;
+}
+
+/* Enable smooth snapping on the whole page */
+html {
+    scroll-snap-type: y proximity;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+/* Resume Section */
+.resume-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    color: #00adb5;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resume-item {
+    margin-bottom: 2.5rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between; /* Pushes left and right groups apart */
+    align-items: baseline;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-header-left {
+    display: flex;
+    align-items: space-between;
+    gap: 2rem; 
+}
+
+.item-header-right {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem; 
+}
+
+/* Ensure the date always takes up the exact same amount of space */
+.date {
+    min-width: 110px; /* Adjust this number based on your longest date string */
+    text-align: right; /* Keeps the dates flush against the right edge */
+}
+
+/* Bullet Points */
+.resume-bullets {
+    list-style-type: none; /* We'll use a custom bullet */
+    padding-left: 1.5rem;
+}
+
+.resume-bullets li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+/* Custom Bullet Graphic */
+.resume-bullets li::before {
+    content: "•";
+    color: #00adb5;
+    font-weight: bold;
+    position: absolute;
+    left: -1.2rem;
+}
+
+.resume-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #00adb5;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: #008c92;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    background: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.back-to-top-static {
+    text-decoration: none;
+    color: #00adb5;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top-static:hover {
+    color: #f4f4f4;
+    transform: translateY(-3px);
+}
+
+/* Ensure the scroll is smooth when clicking the link */
+html {
+    scroll-behavior: smooth;
+}
+/* Container for the Job Title + Link */
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Keeps it from breaking on small mobile screens */
+}
+
+/* Style for the separate website link */
+.company-site-link {
+    font-size: 0.85rem;
+    color: #00adb5;
+    text-decoration: none;
+    border: 1px solid #00adb5;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.company-site-link:hover {
+    background-color: #00adb5;
+    color: #121212;
+}
+
+.company-site-link i {
+    font-size: 0.75rem;
+}
+
+/* Ensure the header still pushes the date to the right */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+
+/* Contact Icons in About Section */
+.contact-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: left;
+    gap: 2.5rem;
+}
+
+.contact-links a {
+    color: #f4f4f4;
+    font-size: 2rem; /* Size of the icons */
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover Effects */
+.contact-links a:hover {
+    color: #00adb5;
+    transform: translateY(-5px); /* Gentle lift effect */
+}
+
+/* Specific colors on hover (Optional) */
+.contact-links a:hover .fa-envelope { color: #6e5494; } /* Gmail Purple */
+.contact-links a:hover .fa-github { color: #ea4335; }   /* GitHub Red */
+.contact-links a:hover .fa-linkedin { color: #0077b5; } /* LinkedIn Blue */
+
+/* Hero text refinement */
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.list-text {
+    width: 250px; 
+    display: inline-block; 
+    flex-shrink: 0; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 2rem; 
+}

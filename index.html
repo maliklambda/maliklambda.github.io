@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalikLambda</title>
+    <link rel="icon" type="image/x-icon" href="assets/icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <section id="welcome" class="hero">
+        <div class="container">
+            <h1>Hi, I'm MalikLambda</h1>
+            <p class="tagline">Programmer, Martial Artist and Linguistics Enthusiast</p>
+            <a href="#about" class="btn">Get To Know Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-image">
+                <img src="assets/profile.jpeg" alt="Profile Picture">
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h3>My Programming Journey</h3>
+                <p>
+                    I have been programming in some fashion or another since 5th grade 
+                    (building video games and exploring 3D-rendering techniques).
+                    In 9th grade, I got awarded first place in the "Informatik Biber" competition.
+                    At 18, I got into web development and quickly grew fond of backend technologies. 
+                    One year later, I busied myself with building my first storage engine and fell in love with databases. 
+                    Inevitably, the study of query-language parser, distributed systems and database-server architecture followed.
+                </p>
+                <h3>My Philosophy (if you want to call it that)</h3>
+                <p>
+                    I enjoy recreational programming - having fun while building things just for the sake of it.
+                    I am a pragmatist at heart.
+                    Solving difficult problems by implementing crazy, unheard-of solutions for them is what I do best.
+                </p>
+                <h3>My "non-programming self"</h3>
+                <p>
+                    When I'm not near my screen or whiteboard, 
+                    I enjoy preparing home-cooked meals for family and friends, and spending time outdoors.
+                    I have been practicing various martial arts for almost a decade now.
+                    I am a linguistics enthusiast (not just in the context of programming languages). 
+                    My favourite language to study is Arabic.
+                    I also deeply love mathematics, although I dislike having to adhere to its formalities 
+                    (otherwise, I probably would be studying mathematics full time right now).
+                </p>
+
+                <div class="contact-links">
+                    <a href="mailto:lambda.malik@gmail.com" title="Email me">
+                      <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/maliklambda" target="_blank" title"Github"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/" target="_blank" title="LinkedIn"
+                    onclick="event.preventDefault(); alert('LinkedIn Profile will be added shortly');">
+                      <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="projects-header">
+            <div class="container">
+                <h2>Projects</h2>
+                <p style="color: #f4f4f4;">
+                Here are some of my favourite projects I've developed over the years. <br>
+                Their purpose are mostly of a recreational and educational nature <br>
+                <!-- (in simpler terms: I wanted to learn a concept/technology and had fun building a related project). -->
+                </p> 
+            </div>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="assets/selia_graph_logo.png" alt="Selia_graph logo">
+                <div class="project-info">
+                    <h3>"Selia_graph"</h3>
+                    <p>
+                    Initially designed as a storage engine that represents a directed property graph on disk, 
+                    this project has evolved over time to be a full-on database management system.
+                    Later added functionality includes: 
+                    a database server (for connection handling and authentication) 
+                    and the integration of Sypher (see below) as the parser.
+                    The database server uses a custom protocol that is based on TCP.
+                    Working algorithms on the graph are DFS, BFS and custom traversals.
+                    </p>
+                    <a href="https://github.com/maliklambda/selia_graph" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+            
+
+            <div class="project-card">
+                <!-- <img src="https://via.placeholder.com/1200x700" alt="Sypher"> -->
+                <div class="project-info">
+                    <h3>"Sypher"</h3>
+                    <p>
+                    Sypher or Simple-Cypher is a parser designed for a graph query language.
+                    </p>
+                    <a href="https://github.com/maliklambda/Sypher" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>SeliaDB II</h3>
+                    <p>
+                    The second iteration of SeliaDB, this time written in Go. 
+                    It also includes further functionality, such as 
+                    a parser for a SQL-like language (that patches some of the things I dislike about SQL),
+                    another, more complete implementation of an in-memory B-Tree.
+                    It also includes a very interesting/unique take on handling disk fragmentation 
+                    by preallocating and maintaining space on disk between each entry.
+                    </p>
+                    <a href="https://github.com/maliklambda/SeliaDB-II" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>SeliaDB I</h3>
+                    <p>
+                    A storage engine for a relational database written in C. 
+                    It includes most of the functionality, that would be expected from a realtional storage engine
+                    (tables, rows, columns, indexing, ...).
+                    One notable feature is the implementation of an in-memory B-Tree.
+                    </p>
+                    <a href="https://github.com/maliklambda/SeliaDB-I" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+
+            <!-- 
+              PLANNED PROJECTS 
+              The following projects are currently in the making. 
+              When finished or close to it, they can be added to the list. 
+            -->
+
+            <!-- <div class="project-card"> -->
+            <!--     <img src="assets/image.png" alt="haskalc"> --> 
+            <!--     <div class="project-info"> -->
+            <!--         <h3>"HasKalc"</h3> -->
+            <!--         <p> -->
+            <!--           A cli based arithmetic interpreter written in haskell.  -->
+            <!--           It uses a variation of the pratt parsing algorithm to evaluate arithmetic expressions. -->
+            <!--           Functionality includes:<br> -->
+            <!--           Infix expressions: "A + B"<br> -->
+            <!--           Prefix expressions: "-A" or "(A)"<br> -->
+            <!--           Operator precedence: "A+B*C" is equivalent to "A+(B*C)"<br> -->
+            <!--           Predefined functions: "SQRT(A)"<br> -->
+            <!--         </p> -->
+            <!--         <a href="https://github.com/maliklambda" class="btn" target="_blank">View Source Code</a> -->
+            <!--     </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="project-card"> -->
+            <!--     <img src="assets/image.png" alt="gitrs">  -->
+            <!--     <div class="project-info"> -->
+            <!--         <h3>"Gitrs"</h3> -->
+            <!--         <p> -->
+            <!--           Inspiration has been taken from a certain tool developed by some finish kernel developer ;). -->
+            <!--           Gitrs is a cli-tool that handles an event-driven, snapshot-taking database.  -->
+            <!--           As the name suggests, it can be used to track the history of a filesystem, i.e. a VCS. -->
+            <!--           It also includes a from-scratch written cli-parser. -->
+            <!--         </p> -->
+            <!--         <a href="https://github.com/maliklambda/gitrs" class="btn" target="_blank">View Source Code</a> -->
+            <!--     </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="project-card"> -->
+            <!--     <img src="assets/selia_graph_repo.png" alt="Selia_graph"> -->
+            <!--     <div class="project-info"> -->
+            <!--         <h3>"DS Leader"</h3> -->
+                <!--     <p> -->
+                <!--     A distributed system. A client can connect to it and send messages of a fixed schema.  -->
+                <!--     If at least one of the cluster's node are up, the client will receive a response. -->
+                <!--     The system handles nodes failing and leadership election. -->
+                <!--     The underlying protocol of the system is UDP. -->
+                <!--     </p> -->
+                <!--     <a href="https://github.com/maliklambda" class="btn" target="_blank">View Source Code</a> -->
+                <!-- </div> -->
+            <!-- </div> -->
+
+
+        </div>
+    </section>
+
+
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2>Resume</h2>
+
+            <div class="resume-category">
+                <h3 class="category-title">Professional Experience</h3>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <strong>Application Developer (Fullstack)</strong> @ T-Systems Onsite (Innovation Lab)
+                        </div>
+                        <div class="item-header-right">
+                            <a href="https://www.t-systems-onsite.de/innovation-lab/" target="_blank" class="company-site-link">
+                                Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <span class="date">2026 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Help develop shopping application with special visualization requirements (Python, FastAPI)</li>
+                        <li>Fullstack development of internal HR-planning tool (TypeScript, NestJS, React)</li>
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <strong>Data Engineer</strong> @ Deutsche Telekom Technik
+                        </div>
+                        <div class="item-header-right">
+                            <a href="https://www.telekom.com/" target="_blank" class="company-site-link">
+                                Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <span class="date">2024 - 2026</span>
+                        </div>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Implement complex algorithms: map-correction, nearest-points-analysis, etc. (Python, Shapely, Pandas, Geopandas)</li>
+                        <li>Build internal tool for aquiring new data sets (Python, Rust, Bash)</li>
+                        <li>Provide analysis on existing data sets (Python, Pandas, Numpy, Geopandas)</li>
+                        <li>Perform analysis using non-native graph databases (Python)</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="resume-category">
+                <h3 class="category-title">Education</h3>
+                
+                <div class="resume-item">
+                    <div class="item-header">
+                        <div class="item-header-left">
+                            <strong>B.Sc. Computer Science - Business Information Systems</strong> @ FOM
+                        </div>
+                        <div class="item-header-right">
+                            <a href="https://www.fom.de" target="_blank" class="company-site-link">
+                                Visit Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <span class="date">2024 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Current GPA: 3.1 (using the bavarian formula for conversion)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-category">
+                <h3 class="category-title">Technical Skills</h3>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Core Competencies</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Databases and storage engines (relational, graph, document and key-value storage)</li>
+                        <li>Applied Graph Theory</li>
+                        <li>Parser and interpreter</li>
+                        <li>Application Development (Backend)</li>
+                        <!-- <li>Distributed Systems and consensus algorithms</li> -->
+                    </ul>
+                </div>
+                
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Programming Languages</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Languages I'm proficient with: Rust, Python, Go</li>
+                        <li>Languages I have used in the past (but I don't actively program in): JavaScript/TypeScript, Java, C, C#</li>
+                        <li>Languages I'm currently learning: Haskell, X86-Assembly</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Tools</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Git, Cargo, Perf</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Soft Skills & Special Traits</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>Teaching Technical Concepts/Communicating technical ideas</li>
+                        <li>Broad spectrum of experience (in different technical realms)</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Spoken Languages</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>German, English (C2), Slovak, Arabic</li>
+                    </ul>
+                </div>
+
+                <div class="resume-item">
+                    <div class="item-header">
+                        <strong>Certifications</strong>
+                    </div>
+                    <ul class="resume-bullets">
+                        <li>
+                          <span class="list-text">MOOC.fi: Java Programming I</span>
+                          <a href="https://certificates.mooc.fi/validate/xjj2389usgn" target="_blank" class="company-site-link">
+                            View Certificate<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span class="list-text">MOOC.fi: Java Programming II</span>
+                        <a href="https://certificates.mooc.fi/validate/xs3sg30681e" target="_blank" class="company-site-link">
+                            View Certificate<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <span class="list-text">MOOC.fi: Python Programming I</span>
+                        <a href="https://certificates.mooc.fi/validate/nr6aa8h7smh" target="_blank" class="company-site-link">
+                            View Certificate<i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="resume-actions">
+                <a href="resume.pdf" class="btn" download 
+                  onclick="event.preventDefault(); alert('Resume currently not available as PDF');"
+                  >
+                  Download Resume as PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <a href="#welcome" class="back-to-top-static">
+                Back to Top <i class="fa-solid fa-arrow-up"></i>
+            </a>
+            <br>
+            <p>&copy; 2026 MalikLambda. Built with caffeine and love.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
