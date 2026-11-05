@@ -97,6 +97,20 @@
         <div class="project-grid">
 
             <div class="project-card">
+                <img src="assets/bh_plus_poc.png" alt="architecture diagram of DBHI">
+                <div class="project-info">
+                    <h3>"BH+ Tree POC"</h3>
+                    <p>
+                    A proof of concept of a new approach to database indexing for variable-sized types.
+                    It combines some of the properties of traditional B-Tree- and Hash-Indices.
+                    The base is a on-disk-B-Tree and a append-only data-file in which the hashes and lengths of values are stored.
+                    Collisions are handled with on-disk-linked-lists.
+                    </p>
+                    <a href="https://github.com/maliklambda/BH-Plus-Tree" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
                 <img src="assets/selia_graph_logo.png" alt="Selia_graph logo">
                 <div class="project-info">
                     <h3>"Selia_graph"</h3>
@@ -126,27 +140,38 @@
             </div>
 
             <div class="project-card">
-                <img src="assets/bh_plus_poc.png" alt="architecture diagram of DBHI">
+                <!-- <img src="assets/mlir.png" alt="MLIR Architecture"> -->
                 <div class="project-info">
-                    <h3>"BH+ Tree POC"</h3>
+                    <h3>"MLIR"</h3>
                     <p>
-                    A proof of concept of a new approach to database indexing for variable-sized types.
-                    It combines some of the properties of traditional B-Tree- and Hash-Indices.
-                    The base is a on-disk-B-Tree and a append-only data-file in which the hashes and lengths of values are stored.
-                    Collisions are handled with on-disk-linked-lists.
+                        Machine Learning In Rust.<br>
+                        A library to facilitate machine learning from scratch in Rust.
+                        It goes from a single neuron, to a layer, to a network.
                     </p>
-                    <a href="https://github.com/maliklambda/BH-Plus-Tree" class="btn" target="_blank">View Source Code</a>
+                    <a href="https://github.com/maliklambda/mlir" class="btn" target="_blank">View Source Code</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img src="assets/gpa_architecture.png alt="architecture diagram of GPA">
+                <img src="assets/pyos_architecture.png" alt="PyOS Architecture">
+                <div class="project-info">
+                    <h3>"Py OS"</h3>
+                    <p>
+                        An operating system running on an emulated CPU.
+                        Functionalities include interrupt-handling, process-scheduling, memory-bounds-checking and more.
+                    </p>
+                    <a href="https://github.com/maliklambda/pyos" class="btn" target="_blank">View Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="assets/gpa_architecture.png" alt="architecture diagram of GPA"> 
                 <div class="project-info">
                     <h3>"General Purpose Memory Allocator"</h3>
                     <p>
-                    A memory efficient general purpose allocator. 
-                    The allocator does NOT keep a free list, 
-                    instead it computes freed-chunk-sizes from the start and length of allocated chunks.
+                        A memory efficient general purpose allocator written in Anrew Kelly's Zig. 
+                        The allocator does NOT keep a free list, 
+                        instead it computes freed-chunk-sizes from the start and length of allocated chunks.
                     </p>
                     <a href="https://github.com/maliklambda/General-Purpose-Allocator" class="btn" target="_blank">View Source Code</a>
                 </div>
